@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN-hans">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		 #suggest>li:hover{
+		 	background:#eaeaea;
+		 }
+	</style>
+</head>
+<body>
+<div class="container">
+	<input type="text" id='search'>
+	<div >
+		<ul id="suggest">
+		   <!--li中没有a标签获取，li的innerText值后跳转到比如baidu.com?keyword+value-->
+		</ul>
+	</div>
+</div>
+</body>
+<script src="emailAutocomplete.js"></script>
+<script type="text/javascript">
+	var auto=new EmailAutocomplete({
+         emailInputId:'search',
+         suggestListId:'suggest',
+         domains:["qq.com","163.com","gmail.com","126.com","sina.com",'189.com','123.com'],
+         listStyles:{
+         },
+         ulStyles:{
+            fontSize:'20px',
+            width:'200px',
+            listStyleType:'none',
+            margin:'0px',
+            padding:'0px'
+         },
+         chooseColor:'red',
+         onSelected:function(){
+             console.log('hello');
+         }
+	});
+</script>
+		
+</html>
+<!--
+api配置参考：
+http://www.cnblogs.com/duanhuajian/p/3398904.html
+-->
